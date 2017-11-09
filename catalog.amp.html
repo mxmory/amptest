@@ -1,0 +1,917 @@
+<!doctype html>
+<html amp lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,initial-scale=1.0">
+    <link rel="canonical" href="/article.html">
+    <link rel="shortcut icon" href="amp_favicon.png">
+
+    <title>Ботинки</title>
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
+    <script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
+    <script async custom-element="amp-selector" src="https://cdn.ampproject.org/v0/amp-selector-0.1.js"></script>
+    <script async custom-element="amp-accordion" src="https://cdn.ampproject.org/v0/amp-accordion-0.1.js"></script>
+    <style amp-boilerplate>
+        body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+    <style amp-custom>
+
+        .b-tabs {
+            display: flex;
+            flex-wrap: wrap;
+            font-size: 16px;
+        }
+
+        .b-tabs__head[selected] {
+            background: #f3f3f3;
+            border: none;
+        }
+
+        .b-tabs__head:target + .b-tabs__body {
+            display: none;
+        }
+
+        amp-selector [option][selected] {
+            cursor: auto;
+            outline: none;
+        }
+
+        .b-tabs__head {
+            list-style: none;
+            flex-grow: 1;
+            text-align: center;
+            cursor: pointer;
+            background-color: #efefef;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .b-tabs__body {
+            display: none;
+            width: 100%;
+            order: 1;
+            padding: 10px;
+            background-color: #f3f3f3;
+            z-index: 4;
+        }
+
+        .b-tabs__body .tab-title {
+            cursor: pointer;
+            background-color: #f3f3f3;
+            border: none;
+            margin-bottom: 15px;
+        }
+
+        .b-tabs__head[selected]+.b-tabs__body {
+            display: block;
+        }
+        
+        amp-selector {
+            height: 40px;
+        }
+
+        .b-tabs__head:first-child {
+            margin-right: 5px;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            width: auto;
+            margin: 0;
+            padding: 0;
+            font-size: 13px;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            margin: 0;
+            font-weight: 300;
+        }
+
+        ul, li {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            width: 100%;
+            z-index: 1;
+        }
+
+        .header__top {
+            text-align: center;
+            height: 72px;
+            padding: 26px 0 0;
+            display: block;
+            text-decoration: none;
+            position: relative;
+        }
+
+        .b-nav {
+            border-top: 1px solid #f0f0f0;
+            border-bottom: 1px solid #f0f0f0;
+            font-size: 22px;
+            display: flex;
+            position: -webkit-sticky;
+            position: sticky;
+            top: 0;
+            justify-content: center;
+            align-items: stretch;
+            align-content: stretch;
+            height: auto;
+            width: 100%;
+            z-index: 5;
+            background-color: #fff;
+        }
+
+        .b-nav__item {
+            height: 55px;
+            line-height: 55px;
+            text-align: center;
+            vertical-align: middle;
+            border-right: 1px solid #f0f0f0;
+            text-decoration: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex: 1;
+        }
+
+        .b-title {
+            border-top: 1px solid #efefef;
+            margin-top: 2px;
+            padding: 25px 0px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .b-title h1, .b-title h4 {
+            font-size: 24px;
+            color: #383838;
+        }
+
+        .b-title a {
+            margin-top: 7px;
+            color: #e4b461;
+            text-decoration: underline;
+        }
+
+        .container {
+            padding: 0;
+            max-width: 900px;
+            min-width: 320px;
+            margin: auto;
+        }
+
+        .tab-wrap {
+            margin-bottom: 10px;
+        }
+
+        .catalog {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            align-content: stretch;
+            flex-wrap: wrap;
+            border-bottom: 1px solid #efefef;
+            padding-bottom: 10px;
+        }
+
+        .catalog-title {
+            font-size: 21px;
+            color: #000;
+            text-align: center;
+            padding: 20px 0;
+            border-bottom: 1px solid #efefef;
+            border-top: 1px solid #efefef;
+        }
+
+        .catalog__item {
+            width: 50%;
+            height: auto;
+            text-align: center;
+        }
+
+        .catalog__price{
+            font-size: 14px;
+        }
+
+        .catalog__price span:after{
+            margin-left: 5px;
+            content: '₽';
+        }
+        
+        .b-count {
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        .pagination-wrap {
+            margin: 25px 0px 7px;
+            padding: 0px 0 20px 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        .pagination a {
+            display: inline-block;
+            height: 37px;
+            width: 37px;
+            vertical-align: middle;
+            color: #000;
+            border-radius: 37px;
+            border: 1px solid #ececec;
+            text-align: center;
+            line-height: 37px;
+            text-decoration: none;
+            font-size: 17px;
+            margin: 0 4px;
+        }
+
+        .pagination a:hover {
+            border: 1px solid #e4b461;
+        }
+
+        footer {
+            position: relative;
+            background: #393536;
+            padding: 9px 0 20px;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        footer .b-soc {
+            color: #fff;
+            margin: 17px 0 4px;
+            font-size: 16px;
+            vertical-align: middle;
+        }
+
+        .tab-content {
+            transition: visibility 0s, opacity 0.5s linear;
+            margin-bottom: 10px;
+        }
+
+        .color-select {
+            width: 28px;
+            height: 28px;
+            display: inline;
+            margin: 0 32px 12px 0;
+        }
+
+        .check-box .line.infilter {
+            min-width: 70px;
+            width: 70px;
+        }
+
+        .check-box .line {
+            margin: 0px 0 7px 3px;
+            height: 30px;
+            min-width: 160px;
+            width: 160px;
+            display: inline-block;
+        }
+
+        .check-box input {
+            position: absolute;
+            display: block;
+            width: 0;
+            height: 0;
+            overflow: hidden;
+            opacity: 0;
+        }
+
+        input[type="checkbox"], input[type="radio"] {
+            box-sizing: border-box;
+            padding: 0;
+            border: none;
+            width: 30px;
+            height: 30px;
+        }
+
+        .check-box label {
+            background-repeat: no-repeat;
+            background-position: 0 50%;
+            padding-left: 35px;
+            line-height: 34px;
+            display: inline-block;
+            vertical-align: top;
+            height: 21px;
+            cursor: pointer;
+            position: relative;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            -o-user-select: none;
+            font-size: 14px;
+        }
+
+        .b-filter__result {
+            width: 100%;
+            background-color: #505050;
+            border: none;
+            color: #fff;
+            height: 40px;
+        }
+
+        .b-sorting {
+            text-align: center;
+            height: 50px;
+            padding-top: 30px;
+        }
+
+        .b-sorting__item {
+            height: 32px;
+            border: 1px solid #e9e9e9;
+            width: 160px;
+            padding: 0 10px;
+            margin-left: 9px;
+            border-radius: 1px;
+        }
+
+        amp-sidebar {
+            background-color: #fff;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+
+        }
+
+        .sidebar-left__accordion {
+            padding: 20px;
+            font-size: 21px;
+        }
+
+        .sidebar-left__links {
+            padding: 30px;
+            border-top: 1px solid #efefef;
+        }
+
+        .sidebar-left__links {
+            padding: 30px;
+            border-top: 1px solid #efefef;
+        }
+
+        amp-sidebar .amp-sidebar__title {
+            background-color: #fff;
+            border: none;
+            outline: none;
+            transition: top 1s ease-out 0.5s;
+            margin-bottom: 5px;
+        }
+
+        amp-sidebar amp-accordion {
+            padding-left: 10px;
+        }
+
+        amp-sidebar amp-accordion h4{
+            padding-left: 10px;
+        }
+
+        amp-sidebar amp-accordion h3, h4{
+            line-height: 1.5;
+        }
+
+        .sidebar-links li:last-child a {
+            color: #3f3f3f;
+            text-decoration: none;
+        }
+
+        .sidebar-links a {
+            color: #000000;
+            text-decoration: underline;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .sidebar-links a:hover {
+            color: #e4b461;
+        }
+
+        footer a {
+            color: #fff;
+            text-decoration: underline;
+        }
+
+        .b-soc__list a {
+            color: #fff;
+            margin: 0 10px;
+            display: inline;
+            text-decoration: none;
+        }
+        .b-soc__list {
+            margin: 10px 0;
+            padding: 29px 0 41px 0px;
+        }
+
+        .b-soc__list svg {
+            display: inline;
+            text-decoration: none;
+        }
+
+        .ampstart-input__item {
+            width: 60px;
+            display: inline-block;
+            position: relative;
+            font-size: 13px;
+            /*margin: 15px auto;*/
+        }
+
+        .ampstart-input__item--material {
+            width: 170px;
+        }
+
+        .ampstart-input__item span{
+            vertical-align: middle;
+            position: absolute;
+            top: 5px;
+            left: 40px;
+        }
+
+        .ampstart-input__item label {
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+            position: absolute;
+            display: inline-block;
+            top: 0;
+            left: 0;
+            background: #fff;
+            border-radius: 4px;
+        }
+
+        .ampstart-input__item:after {
+             content: '';
+            display: inline-block;
+             width: 10px;
+             height: 10px;
+             position: absolute;
+             top: 5px;
+             left: 8px;
+             border: 3px solid #e4b461;
+             border-top: none;
+             border-right: none;
+             background: transparent;
+             transform: rotate(-45deg);
+             opacity: 0;
+         }
+
+        .ampstart-input__item:hover::after {
+             opacity: 0.5;
+         }
+
+        .ampstart-input__item input[type=checkbox] {
+            visibility: hidden;
+        }
+
+        .ampstart-input__item:checked + label:after {
+             opacity: 1;
+         }
+
+        @media (max-width: 450px) {
+            .pagination a.hideable {
+                display: none;
+            }
+        }
+
+        @media (max-width: 360px) {
+            .catalog {
+                flex-direction: column;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <a href="/" class="header__top">
+            <div>
+                <amp-img src="/img/logox2.png" alt="img" height="49px" width="204px"></amp-img>
+            </div>
+        </a>
+
+    </header>
+
+    <div id="target-element-left">
+    </div>
+
+    <amp-sidebar id="sidebar-left" layout="nodisplay" side="left">
+        <nav toolbar="(min-width: 784px)"
+             toolbar-target="target-element-left">
+            <ul>
+            </ul>
+        </nav>
+        <div class="sidebar-left__accordion">
+            <amp-img class="amp-close-img"
+                     src="/img/cross.png"
+                     width="20"
+                     height="20"
+                     alt="close sidebar"
+                     on="tap:sidebar-left.close"
+                     role="button"
+                     tabindex="0"></amp-img>
+            <amp-accordion disable-session-states>
+                <section >
+                    <h3 class="amp-sidebar__title">Для женщин</h3>
+                    <amp-accordion disable-session-states>
+                        <section >
+                            <h3 class="amp-sidebar__title">Обувь</h3>
+                            <div>
+                                <h4>Ботинки</h4>
+                                <h4>Кроссовки</h4>
+                                <h4>Кеды</h4>
+                                <h4>Мокасины</h4>
+                            </div>
+
+                        </section>
+                        <section >
+                            <h3 class="amp-sidebar__title">Аксессуары</h3>
+                            <div>
+                                <h4>Сумки</h4>
+                                <h4>Стельки</h4>
+                                <h4>Уход за обувью</h4>
+                            </div>
+
+                        </section>
+                    </amp-accordion>
+                </section>
+                <section >
+                    <h3 class="amp-sidebar__title">Для мужчин</h3>
+                    <amp-accordion disable-session-states>
+                        <section >
+                            <h3 class="amp-sidebar__title">Обувь</h3>
+                            <div>
+                                <h4>Ботинки</h4>
+                                <h4>Кроссовки</h4>
+                                <h4>Кеды</h4>
+                                <h4>Мокасины</h4>
+                            </div>
+
+                        </section>
+                        <section >
+                            <h3 class="amp-sidebar__title">Аксессуары</h3>
+                            <div>
+                                <h4>Сумки</h4>
+                                <h4>Стельки</h4>
+                                <h4>Уход за обувью</h4>
+                            </div>
+                        </section>
+
+                    </amp-accordion>
+                </section>
+                <section >
+                    <h3 class="amp-sidebar__title">Распродажа</h3>
+                    <amp-accordion disable-session-states>
+                        <section >
+                            <h3 class="amp-sidebar__title">Женская обувь</h3>
+                            <div>
+                                <h4>Ботинки</h4>
+                                <h4>Кроссовки</h4>
+                                <h4>Кеды</h4>
+                                <h4>Мокасины</h4>
+                            </div>
+                        </section>
+                        <section >
+                            <h3 class="amp-sidebar__title">Мужская обувь</h3>
+                            <div>
+                                <h4>Ботинки</h4>
+                                <h4>Кроссовки</h4>
+                                <h4>Кеды</h4>
+                                <h4>Мокасины</h4>
+                            </div>
+                        </section>
+
+                    </amp-accordion>
+                </section>
+            </amp-accordion>
+        </div>
+        <div class="sidebar-left__links">
+            <ul class="sidebar-links">
+                <li><a href="#">Акции</a></li>
+                <li><a href="#">Магазины</a></li>
+                <li><a href="#">Оплата и доставка</a></li>
+                <li><a href="#">Авторизоваться</a></li>
+                <li><a href="#">Магнитогорск</a></li>
+                <li><a href="#">+7 (800) 333 70 77</a></li>
+            </ul>
+        </div>
+    </amp-sidebar>
+
+<main>
+    <div class="b-nav">
+        <a href="#" class="b-nav__item" on="tap:sidebar-left.toggle" class="ampstart-btn">
+            <svg viewBox="0 0 32 32" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M4 10h24c1.104 0 2-.896 2-2s-.896-2-2-2H4c-1.104 0-2 .896-2 2s.896 2 2 2zm24 4H4c-1.104 0-2 .896-2 2s.896 2 2 2h24c1.104 0 2-.896 2-2s-.896-2-2-2zm0 8H4c-1.104 0-2 .896-2 2s.896 2 2 2h24c1.104 0 2-.896 2-2s-.896-2-2-2z"/></svg>
+        </a>
+        <a href="#" class="b-nav__item">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 451 451" width="24"><path d="M447.05 428l-109.6-109.6c29.4-33.8 47.2-77.9 47.2-126.1C384.65 86.2 298.35 0 192.35 0 86.25 0 .05 86.3.05 192.3s86.3 192.3 192.3 192.3c48.2 0 92.3-17.8 126.1-47.2L428.05 447c2.6 2.6 6.1 4 9.5 4s6.9-1.3 9.5-4c5.2-5.2 5.2-13.8 0-19zM26.95 192.3c0-91.2 74.2-165.3 165.3-165.3 91.2 0 165.3 74.2 165.3 165.3s-74.1 165.4-165.3 165.4c-91.1 0-165.3-74.2-165.3-165.4z"/></svg>
+        </a>
+        <a href="#" class="b-nav__item">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 486.569 486.569" width="24"><path d="M146.07 320.37h268.1c30.4 0 55.2-24.8 55.2-55.2v-112.8-.4-.8c0-.2 0-.4-.1-.6 0-.2-.1-.5-.1-.7s-.1-.4-.1-.6c-.1-.2-.1-.4-.2-.7-.1-.2-.1-.4-.2-.6-.1-.2-.1-.4-.2-.6-.1-.2-.2-.4-.3-.7-.1-.2-.2-.4-.3-.5l-.3-.6c-.1-.2-.2-.3-.3-.5-.1-.2-.3-.4-.4-.6-.1-.2-.2-.3-.4-.5-.1-.2-.3-.3-.4-.5s-.3-.3-.4-.5-.3-.3-.4-.4l-.5-.5c-.2-.1-.3-.3-.5-.4-.2-.1-.4-.3-.6-.4-.2-.1-.3-.2-.5-.3s-.4-.2-.6-.4l-.6-.3-.6-.3-.6-.3s-.4-.1-.6-.2c-.2-.1-.5-.2-.7-.2s-.4-.1-.5-.1c-.3-.1-.5-.1-.8-.1-.1 0-.2-.1-.4-.1l-339.8-46.9v-47.4c0-.5 0-1-.1-1.4 0-.1 0-.2-.1-.4 0-.3-.1-.6-.1-.9-.1-.3-.1-.5-.2-.8 0-.2-.1-.3-.1-.5l-.3-.9c0-.1-.1-.3-.1-.4-.1-.3-.2-.5-.4-.8-.1-.1-.1-.3-.2-.4-.1-.2-.2-.4-.4-.6-.1-.2-.2-.3-.3-.5s-.2-.3-.3-.5-.3-.4-.4-.6l-.3-.3-.6-.6-.3-.3c-.2-.2-.4-.4-.7-.6-.1-.1-.3-.2-.4-.3-.2-.2-.4-.3-.6-.5-.3-.2-.6-.4-.8-.5-.1-.1-.2-.1-.3-.2-.4-.2-.9-.4-1.3-.6l-73.7-31c-6.9-2.9-14.8.3-17.7 7.2s.3 14.8 7.2 17.7l65.4 27.6v295.8c0 28 21 51.2 48.1 54.7-4.9 8.2-7.8 17.8-7.8 28 0 30.1 24.5 54.5 54.5 54.5s54.5-24.5 54.5-54.5c0-10-2.7-19.5-7.5-27.5h121.4c-4.8 8.1-7.5 17.5-7.5 27.5 0 30.1 24.5 54.5 54.5 54.5s54.5-24.5 54.5-54.5-24.5-54.5-54.5-54.5h-255c-15.6 0-28.2-12.7-28.2-28.2v-36.6c8.2 4.8 17.9 7.6 28.2 7.6zm67.2 111.6c0 15.2-12.4 27.5-27.5 27.5s-27.5-12.4-27.5-27.5 12.4-27.5 27.5-27.5 27.5 12.3 27.5 27.5zm215.4 0c0 15.2-12.4 27.5-27.5 27.5s-27.5-12.4-27.5-27.5 12.4-27.5 27.5-27.5 27.5 12.3 27.5 27.5zm-14.5-138.6h-268.1c-15.6 0-28.2-12.7-28.2-28.2v-145.9l324.5 44.7v101.1c0 15.7-12.7 28.3-28.2 28.3z"/></svg>
+        </a>
+    </div>
+    <div class="container">
+        <div class="b-title">
+            <h1>Ботинки</h1>
+            <a href="#"><span>Назад</span></a>
+        </div>
+    <div class="tab-wrap">
+        <amp-selector role="tablist" layout="container" class="b-tabs">
+            <div role="tab" class="b-tabs__head" option="a"><span>Фильтровать</span></div>
+            <div role="tabpanel" class="b-tabs__body">
+                <amp-accordion class="b-filter" disable-session-states>
+                    <section class="b-filter__item" expanded>
+                        <h4 class="tab-title">Цвет</h4>
+                        <div class="tab-content">
+                            <div class="ampstart-input">
+                                <svg class="color-select" xmlns="http://www.w3.org/2000/svg" width="438.533" height="438.533" viewBox="0 0 438.533 438.533"><path fill="#000" d="M409.133 109.203c-19.608-33.592-46.205-60.19-79.798-79.796C295.735 9.8 259.058 0 219.273 0c-39.78 0-76.47 9.8-110.063 29.407-33.595 19.604-60.192 46.2-79.8 79.796C9.8 142.8 0 179.49 0 219.267c0 39.78 9.804 76.463 29.407 110.062 19.607 33.59 46.204 60.188 79.8 79.797 33.596 19.605 70.282 29.407 110.062 29.407s76.47-9.802 110.064-29.407c33.593-19.602 60.19-46.206 79.795-79.798 19.602-33.597 29.402-70.285 29.402-110.063 0-39.782-9.8-76.472-29.4-110.064z"/>
+                                    <input type="radio" id="с1" name="colorFilter" class="relative" value="1">
+                                </svg>
+                                <svg class="color-select" xmlns="http://www.w3.org/2000/svg" width="438.533" height="438.533" viewBox="0 0 438.533 438.533"><path fill="red" d="M409.133 109.203c-19.608-33.592-46.205-60.19-79.798-79.796C295.735 9.8 259.058 0 219.273 0c-39.78 0-76.47 9.8-110.063 29.407-33.595 19.604-60.192 46.2-79.8 79.796C9.8 142.8 0 179.49 0 219.267c0 39.78 9.804 76.463 29.407 110.062 19.607 33.59 46.204 60.188 79.8 79.797 33.596 19.605 70.282 29.407 110.062 29.407s76.47-9.802 110.064-29.407c33.593-19.602 60.19-46.206 79.795-79.798 19.602-33.597 29.402-70.285 29.402-110.063 0-39.782-9.8-76.472-29.4-110.064z"/>
+                                    <input type="radio" id="с1" name="colorFilter" class="relative" value="2">
+                                </svg>
+                                <svg class="color-select" xmlns="http://www.w3.org/2000/svg" width="438.533" height="438.533" viewBox="0 0 438.533 438.533"><path fill="gray" d="M409.133 109.203c-19.608-33.592-46.205-60.19-79.798-79.796C295.735 9.8 259.058 0 219.273 0c-39.78 0-76.47 9.8-110.063 29.407-33.595 19.604-60.192 46.2-79.8 79.796C9.8 142.8 0 179.49 0 219.267c0 39.78 9.804 76.463 29.407 110.062 19.607 33.59 46.204 60.188 79.8 79.797 33.596 19.605 70.282 29.407 110.062 29.407s76.47-9.802 110.064-29.407c33.593-19.602 60.19-46.206 79.795-79.798 19.602-33.597 29.402-70.285 29.402-110.063 0-39.782-9.8-76.472-29.4-110.064z"/>
+                                    <input type="radio" id="с1" name="colorFilter" class="relative" value="3">
+                                </svg>
+                                <svg class="color-select" xmlns="http://www.w3.org/2000/svg" width="438.533" height="438.533" viewBox="0 0 438.533 438.533"><path fill="blue" d="M409.133 109.203c-19.608-33.592-46.205-60.19-79.798-79.796C295.735 9.8 259.058 0 219.273 0c-39.78 0-76.47 9.8-110.063 29.407-33.595 19.604-60.192 46.2-79.8 79.796C9.8 142.8 0 179.49 0 219.267c0 39.78 9.804 76.463 29.407 110.062 19.607 33.59 46.204 60.188 79.8 79.797 33.596 19.605 70.282 29.407 110.062 29.407s76.47-9.802 110.064-29.407c33.593-19.602 60.19-46.206 79.795-79.798 19.602-33.597 29.402-70.285 29.402-110.063 0-39.782-9.8-76.472-29.4-110.064z"/>
+                                    <input type="radio" id="с1" name="colorFilter" class="relative" value="4">
+                                </svg>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="b-filter__item" expanded>
+                        <h4 class="tab-title">Размер</h4>
+                        <div class="tab-content">
+                            <div class="ampstart-input">
+                                <div class="ampstart-input__item">
+                                    <input type="checkbox" id="s1" name="sizeFilter" class="relative" value="1">
+                                    <label for="s1"></label>
+                                    <span>41</span>
+                                </div>
+                                <div class="ampstart-input__item">
+                                    <input type="checkbox" id="s2" name="sizeFilter" class="relative" value="2">
+                                    <label for="s2"></label>
+                                    <span>42</span>
+                                </div>
+                                <div class="ampstart-input__item">
+                                    <input type="checkbox" id="s3" name="sizeFilter" class="relative" value="1">
+                                    <label for="s3"></label>
+                                    <span>43</span>
+                                </div>
+                                <div class="ampstart-input__item">
+                                    <input type="checkbox" id="s4" name="sizeFilter" class="relative" value="1">
+                                    <label for="s4"></label>
+                                    <span>44</span>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="b-filter__item" expanded>
+                        <h4 class="tab-title">Материал верха (фильтр)</h4>
+                        <div class="tab-content">
+                            <div class="ampstart-input">
+                                <div class="ampstart-input__item ampstart-input__item--material">
+                                    <input type="checkbox" id="m1" name="matFilter" class="relative" value="1">
+                                    <label for="m1"></label>
+                                    <span>натуральная кожа</span>
+                                </div>
+
+                                <div class="ampstart-input__item ampstart-input__item--material">
+                                    <input type="checkbox" id="m2" name="matFilter" class="relative" value="2">
+                                    <label for="m2"></label>
+                                    <span>велюр</span>
+                                </div>
+
+                                <div class="ampstart-input__item ampstart-input__item--material">
+                                    <input type="checkbox" id="m3" name="matFilter" class="relative" value="1">
+                                    <label for="m3"></label>
+                                    <span>нубук</span>
+                                </div>
+
+                                <div class="ampstart-input__item ampstart-input__item--material">
+                                    <input type="checkbox" id="m4" name="matFilter" class="relative" value="1">
+                                    <label for="m4"></label>
+                                    <span>замша</span>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="b-filter__item" expanded>
+                        <h4 class="tab-title">Материал подкладки (фильтр)</h4>
+                        <div class="tab-content">
+                            <div class="ampstart-input">
+                                <div class="ampstart-input__item ampstart-input__item--material">
+                                    <input type="checkbox" id="subm1" name="smatFilter" class="relative" value="1">
+                                    <label for="subm1"></label>
+                                    <span>натуральная кожа</span>
+                                </div>
+
+                                <div class="ampstart-input__item ampstart-input__item--material">
+                                    <input type="checkbox" id="subm2" name="smatFilter" class="relative" value="2">
+                                    <label for="subm2"></label>
+                                    <span>евромех</span>
+                                </div>
+
+                                <div class="ampstart-input__item ampstart-input__item--material">
+                                    <input type="checkbox" id="subm3" name="smatFilter" class="relative" value="1">
+                                    <label for="subm3"></label>
+                                    <span>байка</span>
+                                </div>
+
+                                <div class="ampstart-input__item ampstart-input__item--material">
+                                    <input type="checkbox" id="subm4" name="smatFilter" class="relative" value="1">
+                                    <label for="subm4"></label>
+                                    <span>мех</span>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="b-filter__item" expanded>
+                        <h4 class="tab-title">Хит продаж</h4>
+                        <div class="tab-content">
+                            <div class="ampstart-input">
+                                <div class="ampstart-input__item">
+                                    <input type="checkbox" id="h1" name="hFilter" class="relative" value="1">
+                                    <label for="h1"></label>
+                                    <span>Да</span>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="b-filter__item" expanded>
+                        <h4 class="tab-title">Новинка</h4>
+                        <div class="tab-content">
+                            <div class="ampstart-input">
+                                <div class="ampstart-input__item">
+                                    <input type="checkbox" id="n1" name="nFilter" class="relative" value="1">
+                                    <label for="n1"></label>
+                                    <span>Да</span>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="b-filter__item" expanded>
+                        <h4 class="tab-title">Сезонность</h4>
+                        <div class="tab-content">
+                            <div class="ampstart-input">
+                                <div class="ampstart-input__item ampstart-input__item--material">
+                                    <input type="checkbox" id="seas1" name="seasonFilter" class="relative" value="1">
+                                    <label for="seas1"></label>
+                                    <span>Весна/Осень</span>
+                                </div>
+
+                                <div class="ampstart-input__item ampstart-input__item--material">
+                                    <input type="checkbox" id="seas2" name="seasonFilter" class="relative" value="2">
+                                    <label for="seas2"></label>
+                                    <span>Зима</span>
+                                </div>
+
+                            </div>
+                        </div>
+                    </section>
+                </amp-accordion>
+                <button class="b-filter__result">Показать</button>
+            </div>
+            <div role="tab" class="b-tabs__head" option="b">Сортировать</div>
+            <div role="tabpanel" class="b-tabs__body">
+                <div>
+                    <div class="ampstart-input b-sorting">
+                        <span>Сортировать: </span>
+                        <select id="sort" class="b-sorting__item" >
+                            <option class="b-sorting__option" value="default">По умолчанию</option>
+                            <option class="b-sorting__option" value="price-ascendent">По цене</option>
+                            <option class="b-sorting__option" value="ratio-ascendent">По рейтингу</option>
+                            <option class="b-sorting__option" value="pop-ascendent">По популярности</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </amp-selector>
+    </div>
+            <div class="catalog catalog-title">
+                Популярные в категории
+            </div>
+        <div class="catalog">
+            <div class="catalog__item">
+                <div class="catalog__img">
+                    <amp-img src="/img/item.jpg" alt="img" height="242px" width="182px"></amp-img>
+                </div>
+                <div class="catalog__price">
+                    <span>1000</span>
+                </div>
+            </div>
+            <div class="catalog__item">
+                <div class="catalog__img">
+                    <amp-img src="/img/item.jpg" alt="img" height="242px" width="182px"></amp-img>
+                </div>
+                <div class="catalog__price">
+                    <span>2000</span>
+                </div>
+            </div>
+            <div class="catalog__item">
+                <div class="catalog__img">
+                    <amp-img src="/img/item.jpg" alt="img" height="242px" width="182px"></amp-img>
+                </div>
+                <div class="catalog__price">
+                    <span>3000</span>
+                </div>
+            </div>
+            <div class="catalog__item">
+                <div class="catalog__img">
+                    <amp-img src="/img/item.jpg" alt="img" height="242px" width="182px"></amp-img>
+                </div>
+                <div class="catalog__price">
+                    <span>4000</span>
+                </div>
+            </div>
+        </div>
+        <div class="b-count">По вашему запросу нашли 259 элементов.</div>
+        <div class="catalog">
+            <div class="catalog__item">
+                <div class="catalog__img">
+                    <amp-img src="/img/no-photo.png" alt="img" height="242px" width="182px"></amp-img>
+                </div>
+                <div class="catalog__price">
+                    <span>5000</span>
+                </div>
+            </div>
+            <div class="catalog__item">
+                <div class="catalog__img">
+                    <amp-img src="/img/no-photo.png" alt="img" height="242px" width="182px"></amp-img>
+                </div>
+                <div class="catalog__price">
+                    <span>6000</span>
+                </div>
+            </div>
+            <div class="catalog__item">
+                <div class="catalog__img">
+                    <amp-img src="/img/no-photo.png" alt="img" height="242px" width="182px"></amp-img>
+                </div>
+                <div class="catalog__price">
+                    <span>7000</span>
+                </div>
+            </div>
+            <div class="catalog__item">
+                <div class="catalog__img">
+                    <amp-img src="/img/no-photo.png" alt="img" height="242px" width="182px"></amp-img>
+                </div>
+                <div class="catalog__price">
+                    <span>8000</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="pagination-wrap">
+            <div class="pagination">
+                <a href="#" >1</a>
+                <a href="#" >2</a>
+                <a href="#" >3</a>
+                <a href="#" class="hideable">4</a>
+                <a href="#" class="hideable" >5</a>
+                <a href="#" class="hideable" >...</a>
+                <a href="#" >9</a>
+                <a href="#" >
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 31.49 31.49" width="15px"><path fill="#e4b461" d="M21.205 5.007c-.43-.444-1.143-.444-1.587 0-.43.43-.43 1.143 0 1.57l8.047 8.048H1.11c-.618 0-1.11.493-1.11 1.112 0 .62.492 1.127 1.11 1.127h26.555l-8.047 8.032c-.43.444-.43 1.16 0 1.587.444.444 1.16.444 1.587 0l9.952-9.952c.444-.428.444-1.142 0-1.57l-9.952-9.953z"/></svg>
+                </a>
+            </div>
+        </div>
+
+        </div>
+    </div>
+</main>
+
+<footer>
+    <div class="container">
+        <div class="b-soc">
+            <div>Мы в социальных сетях:</div>
+            <div class="b-soc__list">
+                <a class="b-soc__link" href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 49.652 49.652"><path fill="currentColor" d="M24.826 0C11.136 0 0 11.137 0 24.826c0 13.688 11.137 24.826 24.826 24.826 13.688 0 24.826-11.138 24.826-24.826C49.652 11.136 38.516 0 24.826 0zM31 25.7h-4.04v14.396h-5.984V25.7H18.13v-5.088h2.846v-3.29c0-2.358 1.12-6.04 6.04-6.04l4.435.016v4.94h-3.218c-.524 0-1.27.26-1.27 1.385v2.99h4.56L31 25.7z"/></svg>
+                </a>
+                <a class="b-soc__link" href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 548.358 548.358"><path fill="currentColor" d="M545.45 400.298c-.663-1.43-1.282-2.618-1.857-3.57-9.514-17.134-27.695-38.166-54.532-63.1l-.566-.572-.284-.28-.287-.287h-.288c-12.18-11.612-19.893-19.42-23.123-23.416-5.91-7.614-7.234-15.32-4.004-23.13 2.282-5.9 10.854-18.36 25.696-37.397 7.807-10.09 13.99-18.175 18.556-24.267 32.93-43.78 47.208-71.756 42.828-83.94l-1.7-2.846c-1.144-1.714-4.094-3.282-8.847-4.712-4.763-1.427-10.852-1.663-18.277-.712l-82.224.568c-1.333-.472-3.235-.428-5.713.144-2.475.572-3.713.86-3.713.86l-1.43.714-1.137.86c-.952.567-2 1.566-3.142 2.994-1.137 1.423-2.088 3.093-2.848 4.996-8.952 23.03-19.13 44.444-30.553 64.238-7.043 11.803-13.51 22.032-19.418 30.693-5.9 8.658-10.848 15.037-14.842 19.126-4 4.093-7.61 7.372-10.852 9.85-3.237 2.477-5.708 3.524-7.42 3.14-1.714-.382-3.33-.762-4.858-1.142-2.663-1.713-4.805-4.044-6.42-6.994-1.622-2.95-2.714-6.663-3.285-11.136-.57-4.476-.905-8.326-1-11.563-.09-3.233-.05-7.806.144-13.706.198-5.902.287-9.896.287-11.99 0-7.234.142-15.085.425-23.555.288-8.47.52-15.18.716-20.125.195-4.95.285-10.185.285-15.705s-.336-9.85-1-12.99c-.656-3.14-1.663-6.185-2.99-9.138-1.335-2.95-3.29-5.232-5.853-6.852-2.57-1.618-5.763-2.902-9.564-3.856-10.09-2.284-22.936-3.52-38.547-3.71-35.4-.38-58.147 1.905-68.235 6.854-3.997 2.09-7.614 4.948-10.848 8.562-3.427 4.19-3.905 6.475-1.43 6.85 11.42 1.712 19.507 5.805 24.266 12.276l1.715 3.43c1.334 2.473 2.666 6.853 4 13.133 1.33 6.28 2.19 13.227 2.567 20.837.95 13.897.95 25.793 0 35.69-.953 9.9-1.853 17.606-2.712 23.126-.86 5.52-2.143 9.993-3.855 13.418-1.715 3.426-2.856 5.52-3.428 6.28-.57.76-1.047 1.24-1.425 1.427-2.474.948-5.047 1.43-7.71 1.43-2.667 0-5.9-1.333-9.707-4-3.805-2.665-7.754-6.327-11.847-10.99-4.092-4.666-8.708-11.185-13.85-19.56-5.136-8.373-10.466-18.27-15.986-29.69l-4.567-8.282c-2.855-5.327-6.755-13.085-11.704-23.266-4.952-10.185-9.33-20.037-13.134-29.554-1.522-3.997-3.807-7.04-6.852-9.134l-1.43-.86c-.95-.76-2.474-1.566-4.566-2.426-2.095-.86-4.28-1.475-6.567-1.854l-78.23.568c-7.993 0-13.417 1.81-16.273 5.428l-1.143 1.71c-.572.954-.86 2.476-.86 4.57 0 2.095.57 4.665 1.714 7.708 11.42 26.84 23.84 52.725 37.257 77.66 13.42 24.933 25.08 45.018 34.974 60.236 9.897 15.23 19.985 29.602 30.264 43.112 10.28 13.515 17.083 22.176 20.412 25.98 3.333 3.813 5.95 6.663 7.854 8.566l7.14 6.85c4.567 4.57 11.275 10.042 20.126 16.417 8.853 6.38 18.654 12.66 29.408 18.85 10.756 6.182 23.27 11.226 37.546 15.127 14.275 3.905 28.17 5.472 41.684 4.716h32.834c6.66-.575 11.704-2.67 15.133-6.283l1.136-1.43c.765-1.137 1.48-2.902 2.14-5.277.668-2.38 1-5 1-7.85-.195-8.184.428-15.56 1.852-22.125 1.423-6.564 3.045-11.513 4.86-14.846 1.812-3.33 3.858-6.14 6.135-8.418 2.282-2.283 3.908-3.666 4.862-4.142.947-.48 1.704-.804 2.275-1 4.568-1.52 9.944-.047 16.136 4.43 6.188 4.473 11.99 9.996 17.42 16.56 5.424 6.57 11.942 13.94 19.554 22.124 7.617 8.186 14.277 14.27 19.985 18.274l5.707 3.426c3.812 2.286 8.76 4.38 14.853 6.283 6.08 1.9 11.41 2.377 15.984 1.426l73.087-1.14c7.23 0 12.855-1.197 16.845-3.572 3.998-2.38 6.373-5 7.14-7.85.763-2.855.804-6.093.144-9.713-.678-3.61-1.345-6.135-2.01-7.562z"/></svg>
+                </a>
+                <a class="b-soc__link" href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 95.481 95.481"><path fill="currentColor" d="M43.04 67.254c-7.4-.772-14.075-2.595-19.79-7.064-.708-.556-1.44-1.092-2.087-1.713-2.5-2.402-2.753-5.153-.774-7.988 1.692-2.427 4.534-3.076 7.488-1.683.572.27 1.117.607 1.64.97 10.648 7.316 25.277 7.518 35.966.328 1.06-.812 2.19-1.474 3.503-1.812 2.55-.655 4.93.282 6.3 2.514 1.563 2.55 1.543 5.037-.384 7.016-2.956 3.034-6.51 5.23-10.46 6.76-3.736 1.45-7.827 2.178-11.876 2.662.61.665.9.992 1.28 1.376 5.5 5.525 11.02 11.026 16.5 16.567 1.868 1.888 2.258 4.23 1.23 6.425-1.124 2.4-3.64 3.98-6.107 3.81-1.563-.108-2.782-.886-3.865-1.977-4.15-4.175-8.376-8.273-12.44-12.527-1.184-1.237-1.753-1.003-2.797.07-4.174 4.298-8.416 8.53-12.683 12.736-1.916 1.89-4.196 2.23-6.418 1.15-2.362-1.145-3.865-3.556-3.75-5.98.08-1.638.887-2.89 2.012-4.013C30.97 79.45 36.395 74 41.823 68.56c.36-.363.694-.747 1.217-1.306z"/><path fill="currentColor" d="M47.55 48.33c-13.205-.046-24.033-10.993-23.956-24.22C23.67 10.74 34.504-.036 47.84 0c13.362.036 24.087 10.967 24.02 24.478-.068 13.2-10.97 23.897-24.31 23.85zm12-24.187c-.022-6.567-5.252-11.795-11.806-11.8-6.61-.008-11.886 5.315-11.835 11.942.048 6.542 5.323 11.733 11.895 11.71 6.552-.024 11.768-5.286 11.746-11.852z"/></svg>
+                </a>
+                <a class="b-soc__link" href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 169.063 169.063"><path fill="currentColor" d="M122.406 0H46.654C20.93 0 0 20.93 0 46.655v75.752c0 25.726 20.93 46.655 46.654 46.655h75.752c25.727 0 46.656-20.93 46.656-46.655V46.655C169.062 20.93 148.132 0 122.406 0zm31.657 122.407c0 17.455-14.2 31.655-31.656 31.655H46.654C29.2 154.062 15 139.862 15 122.407V46.655C15 29.2 29.2 15 46.654 15h75.752c17.455 0 31.656 14.2 31.656 31.655v75.752z"/><path fill="currentColor" d="M84.53 40.97c-24.02 0-43.562 19.542-43.562 43.563 0 24.02 19.542 43.56 43.563 43.56s43.564-19.54 43.564-43.56c0-24.02-19.542-43.563-43.563-43.563zm0 72.123c-15.748 0-28.562-12.812-28.562-28.56 0-15.75 12.813-28.564 28.563-28.564s28.564 12.812 28.564 28.562c0 15.75-12.814 28.56-28.563 28.56zM129.92 28.25c-2.89 0-5.728 1.17-7.77 3.22-2.05 2.04-3.23 4.88-3.23 7.78 0 2.892 1.18 5.73 3.23 7.78 2.04 2.04 4.88 3.22 7.77 3.22 2.9 0 5.73-1.18 7.78-3.22 2.05-2.05 3.22-4.89 3.22-7.78 0-2.9-1.17-5.74-3.22-7.78-2.04-2.05-4.88-3.22-7.78-3.22z"/></svg>
+                </a>
+                <a class="b-soc__link" href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 300 300"><path fill="currentColor" d="M5.3 144.645l69.125 25.8 26.756 86.047c1.713 5.51 8.452 7.548 12.925 3.89l38.532-31.41c4.04-3.292 9.792-3.456 14.013-.392l69.498 50.457c4.785 3.478 11.564.856 12.764-4.926l50.91-244.89c1.31-6.316-4.895-11.585-10.91-9.26L5.22 129.403c-7 2.7-6.94 12.612.08 15.243zm91.57 12.066l135.097-83.206c2.428-1.49 4.926 1.792 2.84 3.726L123.314 180.87c-3.92 3.648-6.447 8.53-7.163 13.83l-3.798 28.145c-.503 3.758-5.782 4.13-6.82.494l-14.606-51.326c-1.673-5.854.765-12.107 5.943-15.303z"/></svg>
+                </a>
+            </div>
+        </div>
+        <a href="#">Полная версия сайта</a>
+    </div>
+</footer>
+
+</body>
+</html>
